@@ -77,16 +77,20 @@
             //  const currentDepositValue = parseFloat(currentAmount);
             //  const totalDeposit = depositValue + currentDepositValue;
             //  document.getElementById('currentDeposit').innerText = totalDeposit;
+            if (depositValue < 0) {
+                alert('Deposit value cannot be negative');
+            }
+            else{
+                updateSpanText("currentDeposit",depositValue);
+                updateSpanText('currentBalance',depositValue);
 
-             updateSpanText("currentDeposit",depositValue);
-             updateSpanText('currentBalance',depositValue);
+                //  const currentBalance = document.getElementById("currentBalance").innerText;
+                //  const currentBalanceValue = parseFloat(currentBalance);
+                //  const totalBalance = depositValue + currentBalanceValue;
+                //  document.getElementById('currentBalance').innerText = totalBalance;
 
-            //  const currentBalance = document.getElementById("currentBalance").innerText;
-            //  const currentBalanceValue = parseFloat(currentBalance);
-            //  const totalBalance = depositValue + currentBalanceValue;
-            //  document.getElementById('currentBalance').innerText = totalBalance;
-
-             document.getElementById("depositAmount").value = "";   
+                document.getElementById("depositAmount").value = "";
+            }   
         })
         //withdraw-button event handler
         const withdrawBtn = document.getElementById("addWithdraw");
